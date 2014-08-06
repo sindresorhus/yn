@@ -1,0 +1,37 @@
+{
+  "name": "yn",
+  "version": "0.0.0",
+  "description": "Parse yes/no like values",
+  "license": "MIT",
+  "repository": "sindresorhus/yn",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "yn",
+    "yes",
+    "no",
+    "cli",
+    "prompt",
+    "validate",
+    "input",
+    "answer",
+    "true",
+    "false",
+    "parse"
+  ],
+  "devDependencies": {
+    "ava": "0.0.3"
+  }
+}
