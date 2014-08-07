@@ -35,7 +35,7 @@ yn(true);
 //=> true
 
 yn('unicorn');
-//=> null
+//=> null :(
 ```
 
 Unrecognized values returns `null`.
