@@ -34,7 +34,7 @@ yn('NO');
 yn(true);
 //=> true
 
-yn('unicorn');
+yn('abomasum');
 //=> null
 ```
 
