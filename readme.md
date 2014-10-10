@@ -36,9 +36,16 @@ yn(true);
 
 yn('abomasum');
 //=> null
+
+/* optionally provide a second argument for options */
+/* lenient mode will use a key distance-based score to leniently
+ * accept typos of "yes" and "no"
+ */
+yn('mo', {lenient: true});
+//=> false
 ```
 
-Unrecognized values returns `null`.
+Unrecognized values return `null`.
 
 
 ## License
