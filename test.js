@@ -37,6 +37,7 @@ test(function (t) {
 	t.assert(yn('', {lenient: true}) === null);
 	t.assert(yn('yn', {lenient: true}) === null);
 	t.assert(yn('unicorn', {lenient: true}) === null);
+	t.end();
 });
 
 test(function (t) {
@@ -45,10 +46,12 @@ test(function (t) {
 	t.assert(yn('tes', {lenient: true}) === true);
 	t.assert(yn('twa', {lenient: true}) === true);
 	t.assert(yn('urd', {lenient: true}) === true);
+	t.end();
 });
 
 test(function (t) {
 	t.assert(yn('ni', {lenient: true}) === false);
 	t.assert(yn('bi', {lenient: true}) === false);
 	t.assert(yn('mo', {lenient: true}) === false);
+	t.end();
 });

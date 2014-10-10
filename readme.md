@@ -12,6 +12,8 @@ The following case-insensitive values are recognized:
 'y', 'yes', 'true', true, 'n', 'no', 'false', false
 ```
 
+*Enable lenient mode to gracefully handle typos.*
+
 
 ## Install
 
@@ -37,10 +39,8 @@ yn(true);
 yn('abomasum');
 //=> null
 
-/* optionally provide a second argument for options */
-/* lenient mode will use a key distance-based score to leniently
- * accept typos of "yes" and "no"
- */
+// lenient mode will use a key distance-based score
+// to leniently accept typos of "yes" and "no"
 yn('mo', {lenient: true});
 //=> false
 ```

@@ -1,9 +1,9 @@
 'use strict';
-
 var lenient = require('./lenient');
 
-module.exports = function (val, ops) {
+module.exports = function (val, opts) {
 	val = String(val).trim();
+	opts = opts || {};
 
 	if (/^(?:y|yes|true)$/i.test(val)) {
 		return true;
@@ -13,7 +13,7 @@ module.exports = function (val, ops) {
 		return false;
 	}
 
-	if (typeof ops !== 'undefined' && ops.lenient === true) {
+	if (opts.lenient === true) {
 		return lenient(val);
 	}
 

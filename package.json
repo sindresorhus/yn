@@ -16,7 +16,8 @@
     "test": "node test.js"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "lenient.js"
   ],
   "keywords": [
     "yn",
@@ -29,9 +30,10 @@
     "answer",
     "true",
     "false",
-    "parse"
+    "parse",
+    "lenient"
   ],
   "devDependencies": {
-    "ava": "0.0.3"
+    "ava": "0.0.4"
   }
 }
