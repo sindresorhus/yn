@@ -10,7 +10,8 @@ test('truthy cases',function (t) {
 		'YES',
 		'Yes',
 		'true',
-		true
+		true,
+		1
 	].forEach(function (el) {
 		t.assert(yn(el) === true);
 		t.assert(yn(el, {lenient: true}) === true);
@@ -26,7 +27,8 @@ test('falsey cases', function (t) {
 		'NO',
 		'No',
 		'false',
-		false
+		false,
+ 		0
 	].forEach(function (el) {
 		t.assert(yn(el) === false);
 		t.assert(yn(el, {lenient: true}) === false);
