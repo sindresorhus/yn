@@ -17,7 +17,7 @@ The following case-insensitive values are recognized:
 
 ## Install
 
-```sh
+```
 $ npm install --save yn
 ```
 

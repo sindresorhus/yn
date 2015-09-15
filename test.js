@@ -1,8 +1,7 @@
-'use strict';
-var test = require('ava');
-var yn = require('./');
+import test from 'ava';
+import yn from './';
 
-test('truthy cases', function (t) {
+test('truthy cases', t => {
 	[
 		'y',
 		'Y',
@@ -12,15 +11,15 @@ test('truthy cases', function (t) {
 		'true',
 		true,
 		1
-	].forEach(function (el) {
-		t.assert(yn(el) === true);
-		t.assert(yn(el, {lenient: true}) === true);
+	].forEach(el => {
+		t.true(yn(el));
+		t.true(yn(el, {lenient: true}));
 	});
 
 	t.end();
 });
 
-test('falsey cases', function (t) {
+test('falsey cases', t => {
 	[
 		'n',
 		'N',
@@ -30,38 +29,38 @@ test('falsey cases', function (t) {
 		'false',
 		false,
 		0
-	].forEach(function (el) {
-		t.assert(yn(el) === false);
-		t.assert(yn(el, {lenient: true}) === false);
+	].forEach(el => {
+		t.false(yn(el));
+		t.false(yn(el, {lenient: true}));
 	});
 
 	t.end();
 });
 
-test('Edge cases which return null', function (t) {
-	t.assert(yn(NaN) === null);
-	t.assert(yn('') === null);
-	t.assert(yn('yn') === null);
-	t.assert(yn('unicorn') === null);
-	t.assert(yn(NaN, {lenient: true}) === null);
-	t.assert(yn('', {lenient: true}) === null);
-	t.assert(yn('yn', {lenient: true}) === null);
-	t.assert(yn('unicorn', {lenient: true}) === null);
+test('edge cases which return null', t => {
+	t.is(yn(NaN), null);
+	t.is(yn(''), null);
+	t.is(yn('yn'), null);
+	t.is(yn('unicorn'), null);
+	t.is(yn(NaN, {lenient: true}), null);
+	t.is(yn('', {lenient: true}), null);
+	t.is(yn('yn', {lenient: true}), null);
+	t.is(yn('unicorn', {lenient: true}), null);
 	t.end();
 });
 
-test('lenient option - truthy value cases', function (t) {
-	t.assert(yn('ues', {lenient: true}) === true);
-	t.assert(yn('ywa', {lenient: true}) === true);
-	t.assert(yn('tes', {lenient: true}) === true);
-	t.assert(yn('twa', {lenient: true}) === true);
-	t.assert(yn('urd', {lenient: true}) === true);
+test('lenient option - truthy value cases', t => {
+	t.true(yn('ues', {lenient: true}));
+	t.true(yn('ywa', {lenient: true}));
+	t.true(yn('tes', {lenient: true}));
+	t.true(yn('twa', {lenient: true}));
+	t.true(yn('urd', {lenient: true}));
 	t.end();
 });
 
-test('lenient option - falsey value cases', function (t) {
-	t.assert(yn('ni', {lenient: true}) === false);
-	t.assert(yn('bi', {lenient: true}) === false);
-	t.assert(yn('mo', {lenient: true}) === false);
+test('lenient option - falsey value cases', t => {
+	t.false(yn('ni', {lenient: true}));
+	t.false(yn('bi', {lenient: true}));
+	t.false(yn('mo', {lenient: true}));
 	t.end();
 });

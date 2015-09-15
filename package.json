@@ -7,7 +7,7 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "contributors": [
     "Justin Woo <moomoowoo@gmail.com>",
@@ -17,7 +17,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && node test.js"
+    "test": "xo && ava"
   },
   "files": [
     "index.js",
@@ -38,7 +38,7 @@
     "lenient"
   ],
   "devDependencies": {
-    "ava": "0.0.4",
+    "ava": "*",
     "xo": "*"
   }
 }
