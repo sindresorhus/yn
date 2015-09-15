@@ -2,7 +2,7 @@
 var test = require('ava');
 var yn = require('./');
 
-test(function (t) {
+test('truthy cases',function (t) {
 	[
 		'y',
 		'Y',
@@ -10,12 +10,16 @@ test(function (t) {
 		'YES',
 		'Yes',
 		'true',
-		true
+		true,
+		1
 	].forEach(function (el) {
 		t.assert(yn(el) === true);
 		t.assert(yn(el, {lenient: true}) === true);
 	});
+  t.end(); 
+});
 
+test('falsey cases', function (t) {
 	[
 		'n',
 		'N',
@@ -23,12 +27,16 @@ test(function (t) {
 		'NO',
 		'No',
 		'false',
-		false
+		false,
+ 		0
 	].forEach(function (el) {
 		t.assert(yn(el) === false);
 		t.assert(yn(el, {lenient: true}) === false);
 	});
+  t.end(); 
+});
 
+test('Edge cases which return null', function (t) {
 	t.assert(yn(NaN) === null);
 	t.assert(yn('') === null);
 	t.assert(yn('yn') === null);
@@ -40,7 +48,7 @@ test(function (t) {
 	t.end();
 });
 
-test(function (t) {
+test('lenient option: truthy value cases',function (t) {
 	t.assert(yn('ues', {lenient: true}) === true);
 	t.assert(yn('ywa', {lenient: true}) === true);
 	t.assert(yn('tes', {lenient: true}) === true);
@@ -49,7 +57,7 @@ test(function (t) {
 	t.end();
 });
 
-test(function (t) {
+test('lenient option: falsey value cases', function (t) {
 	t.assert(yn('ni', {lenient: true}) === false);
 	t.assert(yn('bi', {lenient: true}) === false);
 	t.assert(yn('mo', {lenient: true}) === false);

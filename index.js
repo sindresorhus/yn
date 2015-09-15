@@ -5,11 +5,11 @@ module.exports = function (val, opts) {
 	val = String(val).trim();
 	opts = opts || {};
 
-	if (/^(?:y|yes|true)$/i.test(val)) {
+	if (/^(?:y|yes|true|1)$/i.test(val)) {
 		return true;
 	}
 
-	if (/^(?:n|no|false)$/i.test(val)) {
+	if (/^(?:n|no|false|0)$/i.test(val)) {
 		return false;
 	}
 
