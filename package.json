@@ -9,6 +9,10 @@
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
   },
+  "contributors": [
+    "Justin Woo <moomoowoo@gmail.com>",
+    "Mark Stosberg <mark@rideamigos.com>"
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
