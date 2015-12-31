@@ -15,8 +15,6 @@ test('truthy cases', t => {
 		t.true(yn(el));
 		t.true(yn(el, {lenient: true}));
 	});
-
-	t.end();
 });
 
 test('falsey cases', t => {
@@ -33,8 +31,6 @@ test('falsey cases', t => {
 		t.false(yn(el));
 		t.false(yn(el, {lenient: true}));
 	});
-
-	t.end();
 });
 
 test('edge cases which return null', t => {
@@ -46,7 +42,6 @@ test('edge cases which return null', t => {
 	t.is(yn('', {lenient: true}), null);
 	t.is(yn('yn', {lenient: true}), null);
 	t.is(yn('unicorn', {lenient: true}), null);
-	t.end();
 });
 
 test('lenient option - truthy value cases', t => {
@@ -55,12 +50,10 @@ test('lenient option - truthy value cases', t => {
 	t.true(yn('tes', {lenient: true}));
 	t.true(yn('twa', {lenient: true}));
 	t.true(yn('urd', {lenient: true}));
-	t.end();
 });
 
 test('lenient option - falsey value cases', t => {
 	t.false(yn('ni', {lenient: true}));
 	t.false(yn('bi', {lenient: true}));
 	t.false(yn('mo', {lenient: true}));
-	t.end();
 });
