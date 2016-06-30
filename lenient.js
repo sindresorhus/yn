@@ -64,15 +64,15 @@ function getYesMatchScore(val) {
 	var e = val[1];
 	var s = val[2];
 
-	if (yMatch.hasOwnProperty(y)) {
+	if ({}.hasOwnProperty.call(yMatch, y)) {
 		score += yMatch[y];
 	}
 
-	if (eMatch.hasOwnProperty(e)) {
+	if ({}.hasOwnProperty.call(eMatch, e)) {
 		score += eMatch[e];
 	}
 
-	if (sMatch.hasOwnProperty(s)) {
+	if ({}.hasOwnProperty.call(sMatch, s)) {
 		score += sMatch[s];
 	}
 
@@ -84,11 +84,11 @@ function getNoMatchScore(val) {
 	var n = val[0];
 	var o = val[1];
 
-	if (nMatch.hasOwnProperty(n)) {
+	if ({}.hasOwnProperty.call(nMatch, n)) {
 		score += nMatch[n];
 	}
 
-	if (oMatch.hasOwnProperty(o)) {
+	if ({}.hasOwnProperty.call(oMatch, o)) {
 		score += oMatch[o];
 	}
 
