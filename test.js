@@ -1,73 +1,76 @@
 import test from 'ava';
 import yn from './';
 
+const truthyCases = [
+	'y',
+	'Y',
+	'yes',
+	'YES',
+	'Yes',
+	'true',
+	'TRUE',
+	'True',
+	true,
+	'1',
+	1
+];
 test('truthy cases', t => {
-	[
-		'y',
-		'Y',
-		'yes',
-		'YES',
-		'Yes',
-		'true',
-		'TRUE',
-		'True',
-		true,
-		'1',
-		1
-	].forEach(el => {
+	for (const el of truthyCases) {
 		t.true(yn(el));
 		t.true(yn(el, {lenient: true}));
-	});
+	}
 });
 
+const falseyCases = [
+	'n',
+	'N',
+	'no',
+	'NO',
+	'No',
+	'false',
+	'FALSE',
+	'False',
+	false,
+	'0',
+	0
+];
 test('falsey cases', t => {
-	[
-		'n',
-		'N',
-		'no',
-		'NO',
-		'No',
-		'false',
-		'FALSE',
-		'False',
-		false,
-		'0',
-		0
-	].forEach(el => {
+	for (const el of falseyCases) {
 		t.false(yn(el));
 		t.false(yn(el, {lenient: true}));
-	});
+	}
 });
 
+const nullCases = [
+// Falsey cases that don't work
+	NaN,
+	null,
+	undefined,
+	'',
+	[],
+	{},
+// Numbers: only works on 0 and 1
+	'10',
+	10,
+	'-1',
+	-1,
+	'0.5',
+	0.5,
+	'1BadIntParsing',
+	'0x000',
+// Strings with a low edit-distance don't work
+	'flase',
+	'ture',
+	'n o',
+	'yn',
+// Other
+	'unicorn'
+];
 test('null cases', t => {
-	[
-	// Falsey cases that don't work
-		NaN,
-		null,
-		undefined,
-		'',
-		[],
-		{},
-	// Numbers: only works on 0 and 1
-		'10',
-		10,
-		'-1',
-		-1,
-		'0.5',
-		0.5,
-		'1BadIntParsing',
-		'0x000',
-	// Strings with a low edit-distance don't work
-		'flase',
-		'ture',
-		'n o',
-		'yn',
-	// Other
-		'unicorn'
-	].forEach(el => {
-		t.is(null, yn(el));
-		t.is(null, yn(el, {lenient: true}));
-	});
+	for (const el of nullCases) {
+		t.is(yn(el), null);
+		t.is(yn(el, {lenient: true}), null);
+	}
 });
 
 test('lenient option - truthy value cases', t => {
