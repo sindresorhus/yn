@@ -25,7 +25,7 @@ $ npm install --save yn
 ## Usage
 
 ```js
-var yn = require('yn');
+const yn = require('yn');
 
 yn('y');
 //=> true
