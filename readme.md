@@ -73,6 +73,8 @@ Use a key distance-based score to leniently accept typos of `yes` and `no`.
 Type: `boolean`<br>
 Default: `null`
 
+Default value if no match was found.
+
 
 ## License
 
