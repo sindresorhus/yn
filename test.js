@@ -86,3 +86,17 @@ test('lenient option - falsey value cases', t => {
 	t.false(yn('bi', {lenient: true}));
 	t.false(yn('mo', {lenient: true}));
 });
+
+test('default option throws error if not a boolean type', t => {
+	t.throws(() => yn('10', {default: 10}), 'Expected the `default` option to be of type `boolean`, got `number`');
+});
+
+test('default option', t => {
+	t.true(yn('10', {default: true}));
+	t.false(yn('10', {default: false}));
+});
+
+test('default option with lenient option', t => {
+	t.true(yn('10', {default: true, lenient: true}));
+	t.false(yn('10', {default: false, lenient: true}));
+});
