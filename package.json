@@ -40,5 +40,8 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "xo": "^0.16.0"
+  },
+  "dependencies": {
+    "object-assign": "^4.1.1"
   }
 }

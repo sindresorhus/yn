@@ -39,13 +39,43 @@ yn(true);
 yn('abomasum');
 //=> null
 
-// lenient mode will use a key distance-based score
-// to leniently accept typos of "yes" and "no"
+yn('abomasum', {default: false});
+//=> false
+
 yn('mo', {lenient: true});
 //=> false
 ```
 
 Unrecognized values return `null`.
+
+
+## API
+
+### yn(input, [options])
+
+#### input
+
+Type: `any`
+
+Value that should be converted.
+
+#### options
+
+Type: `object`
+
+##### lenient
+
+Type: `boolean`<br>
+Default: `false`
+
+Use a key distance-based score to leniently accept typos of `yes` and `no`.
+
+##### default
+
+Type: `boolean`<br>
+Default: `null`
+
+Default value if no match was found.
 
 
 ## License
