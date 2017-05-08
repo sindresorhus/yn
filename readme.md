@@ -61,6 +61,8 @@ Value that should be converted.
 
 #### options
 
+Type: `object`
+
 ##### lenient
 
 Type: `boolean`<br>
