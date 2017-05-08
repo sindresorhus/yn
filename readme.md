@@ -55,7 +55,7 @@ Unrecognized values return `null`.
 
 #### input
 
-Type: `*`
+Type: `any`
 
 Value that should be converted.
 
