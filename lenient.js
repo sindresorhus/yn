@@ -1,9 +1,9 @@
 'use strict';
 
-var YES_MATCH_SCORE_THRESHOLD = 2;
-var NO_MATCH_SCORE_THRESHOLD = 1.25;
+const YES_MATCH_SCORE_THRESHOLD = 2;
+const NO_MATCH_SCORE_THRESHOLD = 1.25;
 
-var yMatch = {
+const yMatch = {
 	5: 0.25,
 	6: 0.25,
 	7: 0.25,
@@ -15,7 +15,7 @@ var yMatch = {
 	k: 0.25
 };
 
-var eMatch = {
+const eMatch = {
 	2: 0.25,
 	3: 0.25,
 	4: 0.25,
@@ -27,7 +27,7 @@ var eMatch = {
 	f: 0.25
 };
 
-var sMatch = {
+const sMatch = {
 	q: 0.25,
 	w: 0.25,
 	e: 0.25,
@@ -39,7 +39,7 @@ var sMatch = {
 	c: 0.25
 };
 
-var nMatch = {
+const nMatch = {
 	h: 0.25,
 	j: 0.25,
 	k: 0.25,
@@ -48,7 +48,7 @@ var nMatch = {
 	m: 0.75
 };
 
-var oMatch = {
+const oMatch = {
 	9: 0.25,
 	0: 0.25,
 	i: 0.75,
@@ -59,10 +59,10 @@ var oMatch = {
 };
 
 function getYesMatchScore(val) {
-	var score = 0;
-	var y = val[0];
-	var e = val[1];
-	var s = val[2];
+	let score = 0;
+	const y = val[0];
+	const e = val[1];
+	const s = val[2];
 
 	if ({}.hasOwnProperty.call(yMatch, y)) {
 		score += yMatch[y];
@@ -80,9 +80,9 @@ function getYesMatchScore(val) {
 }
 
 function getNoMatchScore(val) {
-	var score = 0;
-	var n = val[0];
-	var o = val[1];
+	let score = 0;
+	const n = val[0];
+	const o = val[1];
 
 	if ({}.hasOwnProperty.call(nMatch, n)) {
 		score += nMatch[n];
@@ -95,7 +95,7 @@ function getNoMatchScore(val) {
 	return score;
 }
 
-module.exports = function (val, opts) {
+module.exports = (val, opts) => {
 	if (getYesMatchScore(val) >= YES_MATCH_SCORE_THRESHOLD) {
 		return true;
 	}

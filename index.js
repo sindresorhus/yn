@@ -1,10 +1,9 @@
 'use strict';
-var objectAssign = require('object-assign');
-var lenient = require('./lenient');
+const lenient = require('./lenient');
 
-module.exports = function (val, opts) {
+module.exports = (val, opts) => {
 	val = String(val).trim();
-	opts = objectAssign({
+	opts = Object.assign({
 		lenient: false,
 		default: null
 	}, opts);
