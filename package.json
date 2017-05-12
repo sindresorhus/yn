@@ -14,7 +14,7 @@
     "Mark Stosberg <mark@rideamigos.com>"
   ],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -38,10 +38,7 @@
     "lenient"
   ],
   "devDependencies": {
-    "ava": "^0.17.0",
-    "xo": "^0.16.0"
-  },
-  "dependencies": {
-    "object-assign": "^4.1.1"
+    "ava": "*",
+    "xo": "*"
   }
 }
