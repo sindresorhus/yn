@@ -9,7 +9,7 @@ module.exports = (val, opts) => {
 	}, opts);
 
 	if (opts.default !== null && typeof opts.default !== 'boolean') {
-		throw new TypeError('Expected the `default` option to be of type `boolean`, got `' + (typeof opts.default) + '`');
+		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof opts.default}\``);
 	}
 
 	if (/^(?:y|yes|true|1)$/i.test(val)) {
