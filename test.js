@@ -100,3 +100,23 @@ test('default option with lenient option', t => {
 	t.true(m('10', {default: true, lenient: true}));
 	t.false(m('10', {default: false, lenient: true}));
 });
+
+test('default option defined on module-level', t => {
+	m.default = true;
+	t.true(m('10'));
+	t.true(m('true'));
+	m.default = false;
+	t.false(m('10'));
+	t.false(m('false'));
+	m.default = null;
+});
+
+test('lenient option defined on module-level', t => {
+	m.lenient = true;
+	t.true(m('ues'));
+	t.true(m('ywa'));
+	t.true(m('tes'));
+	t.true(m('twa'));
+	t.true(m('urd'));
+	m.lenient = false;
+});
