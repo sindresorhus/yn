@@ -4,8 +4,8 @@ const lenient = require('./lenient');
 module.exports = (val, opts) => {
 	val = String(val).trim();
 	opts = Object.assign({
-		lenient: false,
-		default: null
+		lenient: module.exports.lenient,
+		default: module.exports.default
 	}, opts);
 
 	if (opts.default !== null && typeof opts.default !== 'boolean') {
@@ -26,3 +26,6 @@ module.exports = (val, opts) => {
 
 	return opts.default;
 };
+
+module.exports.default = null;
+module.exports.lenient = false;
