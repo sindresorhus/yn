@@ -4,7 +4,7 @@
 
 Useful for validating answers of a CLI prompt.
 
--
+---
 
 The following case-insensitive values are recognized:
 
