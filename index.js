@@ -26,3 +26,5 @@ module.exports = (val, opts) => {
 
 	return opts.default;
 };
+
+module.exports.default = module.exports;

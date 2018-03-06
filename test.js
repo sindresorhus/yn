@@ -1,6 +1,10 @@
 import test from 'ava';
 import m from '.';
 
+test('default export', t => {
+	t.is(m, m.default);
+});
+
 const truthyCases = [
 	'y',
 	'Y',
