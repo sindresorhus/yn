@@ -21,8 +21,10 @@
   },
   "files": [
     "index.js",
-    "lenient.js"
+    "lenient.js",
+    "index.d.ts"
   ],
+  "types": "index.d.ts",
   "keywords": [
     "yn",
     "yes",
