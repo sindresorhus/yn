@@ -17,14 +17,13 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava && tsd-check"
   },
   "files": [
     "index.js",
     "lenient.js",
     "index.d.ts"
   ],
-  "types": "index.d.ts",
   "keywords": [
     "yn",
     "yes",
@@ -41,6 +40,7 @@
   ],
   "devDependencies": {
     "ava": "*",
+    "tsd-check": "*",
     "xo": "*"
   }
 }
