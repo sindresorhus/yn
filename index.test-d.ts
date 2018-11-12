@@ -5,7 +5,7 @@ import yn from '.';
 expectType<boolean | null>(yn('true'));
 
 // Should use the default type when given
-expectType<boolean | number>(yn('true', { default: 1 }));
+expectType<boolean | number>(yn('true', {default: 1}));
 
 // Should use null as default when only the lenient option is given
-expectType<boolean | null>(yn('true', { lenient: true }));
+expectType<boolean | null>(yn('true', {lenient: true}));
