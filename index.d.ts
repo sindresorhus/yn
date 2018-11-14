@@ -11,7 +11,7 @@ export interface Options<Default = null> {
 	 *
 	 * @default null
 	 */
-	default?: boolean | Default;
+	default?: boolean | null;
 }
 
 /**
