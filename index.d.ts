@@ -1,4 +1,4 @@
-export interface Options<Default = null> {
+export interface Options {
 	/**
 	 * Use a key distance-based score to leniently accept typos of `yes` and `no`.
 	 *
@@ -21,4 +21,4 @@ export interface Options<Default = null> {
  * @param input - Value that should be converted.
  * @returns The parsed input if it can be parsed or the default value defined in the `default` option.
  */
-export default function yn<Default = null>(input: any, options?: Options<Default>): boolean | Default;
+export default function yn(input: any, options?: Options): boolean | null;
