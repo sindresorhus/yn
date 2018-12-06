@@ -1,5 +1,7 @@
 'use strict';
-const lenient = require('./lenient');
+const lenient = require('./lenient'),
+      yes = /^(?:y|yes|true|1)$/i,
+      no = /^(?:n|no|false|0)$/i;
 
 module.exports = (val, opts) => {
 	val = String(val).trim();
@@ -12,11 +14,11 @@ module.exports = (val, opts) => {
 		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof opts.default}\``);
 	}
 
-	if (/^(?:y|yes|true|1)$/i.test(val)) {
+	if (yes.test(val)) {
 		return true;
 	}
 
-	if (/^(?:n|no|false|0)$/i.test(val)) {
+	if (no.test(val)) {
 		return false;
 	}
 
