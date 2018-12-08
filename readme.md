@@ -18,7 +18,7 @@ The following case-insensitive values are recognized:
 ## Install
 
 ```
-$ npm install --save yn
+$ npm install yn
 ```
 
 
@@ -61,7 +61,7 @@ Value that should be converted.
 
 #### options
 
-Type: `object`
+Type: `Object`
 
 ##### lenient
 
@@ -80,4 +80,4 @@ Default value if no match was found.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

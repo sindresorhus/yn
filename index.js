@@ -1,30 +1,32 @@
 'use strict';
 const lenient = require('./lenient');
 
-module.exports = (val, opts) => {
-	val = String(val).trim();
-	opts = Object.assign({
+const yn = (input, options) => {
+	input = String(input).trim();
+
+	options = Object.assign({
 		lenient: false,
 		default: null
-	}, opts);
+	}, options);
 
-	if (opts.default !== null && typeof opts.default !== 'boolean') {
-		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof opts.default}\``);
+	if (options.default !== null && typeof options.default !== 'boolean') {
+		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof options.default}\``);
 	}
 
-	if (/^(?:y|yes|true|1)$/i.test(val)) {
+	if (/^(?:y|yes|true|1)$/i.test(input)) {
 		return true;
 	}
 
-	if (/^(?:n|no|false|0)$/i.test(val)) {
+	if (/^(?:n|no|false|0)$/i.test(input)) {
 		return false;
 	}
 
-	if (opts.lenient === true) {
-		return lenient(val, opts);
+	if (options.lenient === true) {
+		return lenient(input, options);
 	}
 
-	return opts.default;
+	return options.default;
 };
 
-module.exports.default = module.exports;
+module.exports = yn;
+module.exports.default = yn;
