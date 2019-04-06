@@ -29,4 +29,5 @@ const yn = (input, options) => {
 };
 
 module.exports = yn;
+// TODO: Remove this for the next major release
 module.exports.default = yn;
