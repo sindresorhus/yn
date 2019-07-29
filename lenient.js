@@ -12,7 +12,7 @@ const yMatch = new Map([
 	['u', 0.75],
 	['g', 0.25],
 	['h', 0.25],
-	['k', 0.25]
+	['j', 0.25]
 ]);
 
 const eMatch = new Map([
