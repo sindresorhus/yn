@@ -10,9 +10,9 @@ declare namespace yn {
 		/**
 		Default value if no match was found.
 
-		@default null
+		@default undefined
 		*/
-		readonly default?: boolean | null;
+		readonly default?: boolean | undefined;
 	}
 
 	interface OptionsWithDefault extends Options {
@@ -42,7 +42,7 @@ yn(true);
 //=> true
 
 yn('abomasum');
-//=> null
+//=> undefined
 
 yn('abomasum', {default: false});
 //=> false
@@ -52,6 +52,6 @@ yn('mo', {lenient: true});
 ```
 */
 declare function yn(input: unknown, options: yn.OptionsWithDefault): boolean;
-declare function yn(input: unknown, options?: yn.Options): boolean | null;
+declare function yn(input: unknown, options?: yn.Options): boolean | undefined;
 
 export = yn;

@@ -15,9 +15,9 @@ const truthyCases = [
 	1
 ];
 test('truthy cases', t => {
-	for (const truthyCase of truthyCases) {
-		t.true(yn(truthyCase));
-		t.true(yn(truthyCase, {lenient: true}));
+	for (const case_ of truthyCases) {
+		t.true(yn(case_));
+		t.true(yn(case_, {lenient: true}));
 	}
 });
 
@@ -35,13 +35,13 @@ const falseyCases = [
 	0
 ];
 test('falsey cases', t => {
-	for (const falseyCase of falseyCases) {
-		t.false(yn(falseyCase));
-		t.false(yn(falseyCase, {lenient: true}));
+	for (const case_ of falseyCases) {
+		t.false(yn(case_));
+		t.false(yn(case_, {lenient: true}));
 	}
 });
 
-const nullCases = [
+const undefinedCases = [
 	// Falsey cases that don't work
 	NaN,
 	null,
@@ -66,10 +66,10 @@ const nullCases = [
 	// Other
 	'unicorn'
 ];
-test('null cases', t => {
-	for (const nullCase of nullCases) {
-		t.is(yn(nullCase), null);
-		t.is(yn(nullCase, {lenient: true}), null);
+test('undefined cases', t => {
+	for (const case_ of undefinedCases) {
+		t.is(yn(case_), undefined);
+		t.is(yn(case_, {lenient: true}), undefined);
 	}
 });
 

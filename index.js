@@ -3,11 +3,11 @@ const lenientFunction = require('./lenient');
 
 const yn = (value, {
 	lenient = false,
-	default: default_ = null
+	default: default_
 } = {}) => {
 	value = String(value).trim();
 
-	if (default_ !== null && typeof default_ !== 'boolean') {
+	if (default_ !== undefined && typeof default_ !== 'boolean') {
 		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof default_}\``);
 	}
 

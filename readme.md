@@ -37,7 +37,7 @@ yn(true);
 //=> true
 
 yn('abomasum');
-//=> null
+//=> undefined
 
 yn('abomasum', {default: false});
 //=> false
@@ -46,7 +46,7 @@ yn('mo', {lenient: true});
 //=> false
 ```
 
-Unrecognized values return `null`.
+Unrecognized values return `undefined`.
 
 
 ## API
@@ -73,6 +73,6 @@ Use a key distance-based score to leniently accept typos of `yes` and `no`.
 ##### default
 
 Type: `boolean`\
-Default: `null`
+Default: `undefined`
 
 Default value if no match was found.
