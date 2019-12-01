@@ -11,11 +11,11 @@ const yn = (value, {
 		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof default_}\``);
 	}
 
-	if (/^(?:y|yes|true|1)$/i.test(value)) {
+	if (/^(?:y|yes|true|1|on)$/i.test(value)) {
 		return true;
 	}
 
-	if (/^(?:n|no|false|0)$/i.test(value)) {
+	if (/^(?:n|no|false|0|off)$/i.test(value)) {
 		return false;
 	}
 

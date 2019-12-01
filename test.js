@@ -12,7 +12,8 @@ const truthyCases = [
 	'True',
 	true,
 	'1',
-	1
+	1,
+	'on'
 ];
 test('truthy cases', t => {
 	for (const case_ of truthyCases) {
@@ -32,7 +33,8 @@ const falseyCases = [
 	'False',
 	false,
 	'0',
-	0
+	0,
+	'off'
 ];
 test('falsey cases', t => {
 	for (const case_ of falseyCases) {
