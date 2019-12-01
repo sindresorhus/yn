@@ -92,7 +92,7 @@ function getNoMatchScore(value) {
 	return score;
 }
 
-module.exports = (input, options) => {
+module.exports = (input, default_) => {
 	if (getYesMatchScore(input) >= YES_MATCH_SCORE_THRESHOLD) {
 		return true;
 	}
@@ -101,5 +101,5 @@ module.exports = (input, options) => {
 		return false;
 	}
 
-	return options.default;
+	return default_;
 };

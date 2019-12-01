@@ -15,9 +15,9 @@ const truthyCases = [
 	1
 ];
 test('truthy cases', t => {
-	for (const el of truthyCases) {
-		t.true(yn(el));
-		t.true(yn(el, {lenient: true}));
+	for (const truthyCase of truthyCases) {
+		t.true(yn(truthyCase));
+		t.true(yn(truthyCase, {lenient: true}));
 	}
 });
 
@@ -35,9 +35,9 @@ const falseyCases = [
 	0
 ];
 test('falsey cases', t => {
-	for (const el of falseyCases) {
-		t.false(yn(el));
-		t.false(yn(el, {lenient: true}));
+	for (const falseyCase of falseyCases) {
+		t.false(yn(falseyCase));
+		t.false(yn(falseyCase, {lenient: true}));
 	}
 });
 
@@ -67,9 +67,9 @@ const nullCases = [
 	'unicorn'
 ];
 test('null cases', t => {
-	for (const el of nullCases) {
-		t.is(yn(el), null);
-		t.is(yn(el, {lenient: true}), null);
+	for (const nullCase of nullCases) {
+		t.is(yn(nullCase), null);
+		t.is(yn(nullCase, {lenient: true}), null);
 	}
 });
 
@@ -88,7 +88,9 @@ test('lenient option - falsey value cases', t => {
 });
 
 test('default option throws error if not a boolean type', t => {
-	t.throws(() => yn('10', {default: 10}), 'Expected the `default` option to be of type `boolean`, got `number`');
+	t.throws(() => {
+		yn('10', {default: 10});
+	}, 'Expected the `default` option to be of type `boolean`, got `number`');
 });
 
 test('default option', t => {

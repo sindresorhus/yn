@@ -1,33 +1,29 @@
 'use strict';
-const lenient = require('./lenient');
+const lenientFunction = require('./lenient');
 
-const yn = (input, options) => {
-	input = String(input).trim();
+const yn = (value, {
+	lenient = false,
+	default: default_ = null
+} = {}) => {
+	value = String(value).trim();
 
-	options = Object.assign({
-		lenient: false,
-		default: null
-	}, options);
-
-	if (options.default !== null && typeof options.default !== 'boolean') {
-		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof options.default}\``);
+	if (default_ !== null && typeof default_ !== 'boolean') {
+		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof default_}\``);
 	}
 
-	if (/^(?:y|yes|true|1)$/i.test(input)) {
+	if (/^(?:y|yes|true|1)$/i.test(value)) {
 		return true;
 	}
 
-	if (/^(?:n|no|false|0)$/i.test(input)) {
+	if (/^(?:n|no|false|0)$/i.test(value)) {
 		return false;
 	}
 
-	if (options.lenient === true) {
-		return lenient(input, options);
+	if (lenient === true) {
+		return lenientFunction(value, default_);
 	}
 
-	return options.default;
+	return default_;
 };
 
 module.exports = yn;
-// TODO: Remove this for the next major release
-module.exports.default = yn;

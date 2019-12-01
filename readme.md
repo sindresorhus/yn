@@ -51,33 +51,28 @@ Unrecognized values return `null`.
 
 ## API
 
-### yn(input, [options])
+### yn(input, options?)
 
 #### input
 
-Type: `any`
+Type: `unknown`
 
 Value that should be converted.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### lenient
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `false`
 
 Use a key distance-based score to leniently accept typos of `yes` and `no`.
 
 ##### default
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `null`
 
 Default value if no match was found.
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
