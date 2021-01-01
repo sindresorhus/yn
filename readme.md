@@ -1,4 +1,4 @@
-# yn [![Build Status](https://travis-ci.org/sindresorhus/yn.svg?branch=master)](https://travis-ci.org/sindresorhus/yn)
+# yn
 
 > Parse yes/no like values
 
