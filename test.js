@@ -1,5 +1,5 @@
 import test from 'ava';
-import yn from '.';
+import yn from './index.js';
 
 const truthyCases = [
 	'y',
@@ -13,7 +13,7 @@ const truthyCases = [
 	true,
 	'1',
 	1,
-	'on'
+	'on',
 ];
 test('truthy cases', t => {
 	for (const case_ of truthyCases) {
@@ -34,7 +34,7 @@ const falseyCases = [
 	false,
 	'0',
 	0,
-	'off'
+	'off',
 ];
 test('falsey cases', t => {
 	for (const case_ of falseyCases) {
@@ -45,7 +45,7 @@ test('falsey cases', t => {
 
 const undefinedCases = [
 	// Falsey cases that don't work
-	NaN,
+	Number.NaN,
 	null,
 	undefined,
 	'',
@@ -66,7 +66,7 @@ const undefinedCases = [
 	'n o',
 	'yn',
 	// Other
-	'unicorn'
+	'unicorn',
 ];
 test('undefined cases', t => {
 	for (const case_ of undefinedCases) {
@@ -92,7 +92,9 @@ test('lenient option - falsey value cases', t => {
 test('default option throws error if not a boolean type', t => {
 	t.throws(() => {
 		yn('10', {default: 10});
-	}, 'Expected the `default` option to be of type `boolean`, got `number`');
+	}, {
+		message: 'Expected the `default` option to be of type `boolean`, got `number`',
+	});
 });
 
 test('default option', t => {

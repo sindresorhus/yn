@@ -1,5 +1,3 @@
-'use strict';
-
 const YES_MATCH_SCORE_THRESHOLD = 2;
 const NO_MATCH_SCORE_THRESHOLD = 1.25;
 
@@ -12,9 +10,10 @@ const yMatch = new Map([
 	['u', 0.75],
 	['g', 0.25],
 	['h', 0.25],
-	['j', 0.25]
+	['j', 0.25],
 ]);
 
+// eslint-disable-next-line unicorn/prevent-abbreviations
 const eMatch = new Map([
 	[2, 0.25],
 	[3, 0.25],
@@ -24,7 +23,7 @@ const eMatch = new Map([
 	['r', 0.75],
 	['s', 0.25],
 	['d', 0.25],
-	['f', 0.25]
+	['f', 0.25],
 ]);
 
 const sMatch = new Map([
@@ -36,7 +35,7 @@ const sMatch = new Map([
 	['d', 0.75],
 	['z', 0.25],
 	['x', 0.25],
-	['c', 0.25]
+	['c', 0.25],
 ]);
 
 const nMatch = new Map([
@@ -45,7 +44,7 @@ const nMatch = new Map([
 	['k', 0.25],
 	['b', 0.75],
 	['n', 1],
-	['m', 0.75]
+	['m', 0.75],
 ]);
 
 const oMatch = new Map([
@@ -55,10 +54,11 @@ const oMatch = new Map([
 	['o', 1],
 	['p', 0.75],
 	['k', 0.25],
-	['l', 0.25]
+	['l', 0.25],
 ]);
 
 function getYesMatchScore(value) {
+	// eslint-disable-next-line unicorn/prevent-abbreviations
 	const [y, e, s] = value;
 	let score = 0;
 
@@ -92,7 +92,7 @@ function getNoMatchScore(value) {
 	return score;
 }
 
-module.exports = (input, default_) => {
+export default function lenient(input, default_) {
 	if (getYesMatchScore(input) >= YES_MATCH_SCORE_THRESHOLD) {
 		return true;
 	}
@@ -102,4 +102,4 @@ module.exports = (input, default_) => {
 	}
 
 	return default_;
-};
+}

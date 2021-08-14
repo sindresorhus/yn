@@ -14,18 +14,16 @@ The following case-insensitive values are recognized:
 
 *Enable lenient mode to gracefully handle typos.*
 
-
 ## Install
 
 ```
 $ npm install yn
 ```
 
-
 ## Usage
 
 ```js
-const yn = require('yn');
+import yn from 'yn';
 
 yn('y');
 //=> true
@@ -48,7 +46,6 @@ yn('mo', {lenient: true});
 
 Unrecognized values return `undefined`.
 
-
 ## API
 
 ### yn(input, options?)
@@ -57,7 +54,7 @@ Unrecognized values return `undefined`.
 
 Type: `unknown`
 
-Value that should be converted.
+The value that should be converted.
 
 #### options
 
@@ -75,4 +72,4 @@ Use a key distance-based score to leniently accept typos of `yes` and `no`.
 Type: `boolean`\
 Default: `undefined`
 
-Default value if no match was found.
+The default value if no match was found.

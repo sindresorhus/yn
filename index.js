@@ -1,10 +1,9 @@
-'use strict';
-const lenientFunction = require('./lenient');
+import lenientFunction from './lenient.js';
 
-const yn = (value, {
+export default function yn(value, {
 	lenient = false,
-	default: default_
-} = {}) => {
+	default: default_,
+} = {}) {
 	value = String(value).trim();
 
 	if (default_ !== undefined && typeof default_ !== 'boolean') {
@@ -24,6 +23,4 @@ const yn = (value, {
 	}
 
 	return default_;
-};
-
-module.exports = yn;
+}

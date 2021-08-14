@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import yn = require('.');
+import yn from './index.js';
 
 expectType<boolean | undefined>(yn('y'));
 expectType<boolean | undefined>(yn('mo', {lenient: true}));

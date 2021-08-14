@@ -4,13 +4,16 @@
 	"description": "Parse yes/no like values",
 	"license": "MIT",
 	"repository": "sindresorhus/yn",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=10"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -35,8 +38,8 @@
 		"lenient"
 	],
 	"devDependencies": {
-		"ava": "^2.4.0",
-		"tsd": "^0.11.0",
-		"xo": "^0.25.3"
+		"ava": "^3.15.0",
+		"tsd": "^0.17.0",
+		"xo": "^0.44.0"
 	}
 }
