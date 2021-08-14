@@ -1,6 +1,6 @@
 {
 	"name": "yn",
-	"version": "4.0.0",
+	"version": "5.0.0",
 	"description": "Parse yes/no like values",
 	"license": "MIT",
 	"repository": "sindresorhus/yn",
