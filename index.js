@@ -4,6 +4,10 @@ export default function yn(value, {
 	lenient = false,
 	default: default_,
 } = {}) {
+	if(value === undefined || value === null){
+		return default_;
+	}
+	
 	value = String(value).trim();
 
 	if (default_ !== undefined && typeof default_ !== 'boolean') {
