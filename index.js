@@ -4,15 +4,15 @@ export default function yn(value, {
 	lenient = false,
 	default: default_,
 } = {}) {
-	if(value === undefined || value === null){
+	if (default_ !== undefined && typeof default_ !== 'boolean') {
+		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof default_}\``);
+	}
+
+	if (value === undefined || value === null) {
 		return default_;
 	}
 	
 	value = String(value).trim();
-
-	if (default_ !== undefined && typeof default_ !== 'boolean') {
-		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof default_}\``);
-	}
 
 	if (/^(?:y|yes|true|1|on)$/i.test(value)) {
 		return true;
