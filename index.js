@@ -11,7 +11,7 @@ export default function yn(value, {
 	if (value === undefined || value === null) {
 		return default_;
 	}
-	
+
 	value = String(value).trim();
 
 	if (/^(?:y|yes|true|1|on)$/i.test(value)) {
