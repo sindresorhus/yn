@@ -16,8 +16,8 @@ The following case-insensitive values are recognized:
 
 ## Install
 
-```
-$ npm install yn
+```sh
+npm install yn
 ```
 
 ## Usage
