@@ -9,7 +9,7 @@ Useful for validating answers of a CLI prompt.
 The following case-insensitive values are recognized:
 
 ```js
-'y', 'yes', 'true', true, '1', 1, 'n', 'no', 'false', false, '0', 0, 'on', 'off'
+'y', 'yes', 't', 'true', true, '1', 1, 'n', 'no', 'f', 'false', false, '0', 0, 'on', 'off'
 ```
 
 *Enable lenient mode to gracefully handle typos.*
