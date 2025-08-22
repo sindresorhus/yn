@@ -21,7 +21,7 @@ export interface OptionsWithDefault extends Options {
 /**
 Parse yes/no like values.
 
-The following case-insensitive values are recognized: `'y', 'yes', 'true', true, '1', 1, 'n', 'no', 'false', false, '0', 0`, 'on', 'off'
+The following case-insensitive values are recognized: `'y', 'yes', 't', 'true', true, '1', 1, 'n', 'no', 'f', 'false', false, '0', 0`, 'on', 'off'
 
 @param input - The value that should be converted.
 @returns The parsed input if it can be parsed or the default value defined in the `default` option.
