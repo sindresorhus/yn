@@ -14,11 +14,11 @@ export default function yn(value, {
 
 	value = String(value).trim();
 
-	if (/^(?:y|yes|true|1|on)$/i.test(value)) {
+	if (/^(?:y|yes|t|true|1|on)$/i.test(value)) {
 		return true;
 	}
 
-	if (/^(?:n|no|false|0|off)$/i.test(value)) {
+	if (/^(?:n|no|f|false|0|off)$/i.test(value)) {
 		return false;
 	}
 
